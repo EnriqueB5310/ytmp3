@@ -15,6 +15,10 @@ app.listen(4000, () => {
     console.log("Server Listening on 4000")
 })
 
+app.get('/', (req,res) => {
+  res.sendFile(__dirname + '/index.html')
+})
+
 app.get('/download', (req,res) => {
     let URL = req.query.URL;
   res.header('Content-Disposition', 'attatchment; filename="video.mp3');
