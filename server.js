@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
+const path = require('path')
+
 
 const corsOptions ={
     origin:'*', 
@@ -10,13 +12,16 @@ const corsOptions ={
  }
  
  app.use(cors(corsOptions))
+app.use(express.static(path.join(__dirname, 'public')))
+
+
 
 app.listen(4000, () => {
     console.log("Server Listening on 4000")
 })
 
 app.get('/', (req,res) => {
-  res.sendFile(__dirname + '/index.html')
+  res.redirect('index.html')
 })
 
 app.get('/download', (req,res) => {
