@@ -7,6 +7,6 @@ convertBtn.addEventListener('click' , () => {
 })
 
 function sendURL(URL) {
-  window.location.href =`https://ytmp3-iqma.onrender.com//download?URL=${URL}`;
+  window.location.href =`https://ytmp3-iqma.onrender.com/download?URL=${URL}`;
 
 }
