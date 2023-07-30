@@ -26,7 +26,7 @@ app.get('/', (req,res) => {
 
 app.get('/download', (req,res) => {
     let URL = req.query.URL;
-  res.header('Content-Disposition', 'attatchment; filename="video.mp3');
+    res.header('Content-Disposition', 'attachment; filename="video.mp3"');
 
   ytdl(URL, {
     format: 'mp3'
