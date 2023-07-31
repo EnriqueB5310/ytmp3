@@ -24,12 +24,24 @@ app.get('/', (req,res) => {
   res.redirect('index.html')
 })
 
-app.get('/download', (req,res) => {
-    let URL = req.query.URL;
-    res.header('Content-Disposition', 'attachment; filename="audio"');
+app.get('/download', async (req,res) => {
+  let URL = req.query.URL;
+ 
 
-  ytdl(URL, {
-    format: 'mp3',
-      filter: 'audioonly',
-  }).pipe(res)
-})
+
+
+  await ytdl.getInfo(URL).then(info => {
+    console.log(info.videoDetails.title);
+
+
+
+    res.header('Content-Disposition', `attachment; filename="${info.videoDetails.title}.mp3`);
+
+    ytdl(URL, {
+      format: 'mp4',
+        filter: 'audioonly',
+    }).pipe(res)
+    })
+
+
+  })
