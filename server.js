@@ -45,3 +45,26 @@ app.get('/download', async (req,res) => {
 
 
   })
+
+app.get('/downloadmp4', async (req,res) => {
+    let URL = req.query.URL;
+   
+  
+  
+  
+    await ytdl.getInfo(URL).then(info => {
+      console.log(info.videoDetails.title);
+  
+  
+  
+      res.header('Content-Disposition', `attachment; filename="${info.videoDetails.title}.mp4`);
+  
+      ytdl(URL, {
+        format: 'mp4',
+          
+      }).pipe(res)
+      })
+  
+  
+    })
+  
