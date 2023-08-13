@@ -3,7 +3,7 @@ const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
 const path = require('path')
-const PORT = 'https://ytmp3-iqma.onrender.com'
+
 
 const corsOptions ={
     origin:'*', 
@@ -46,13 +46,13 @@ app.get('/download', async (req,res) => {
 
   })
 
-app.get('/downloadmp4', async (req,res) => {
+  app.get('/downloadmp4', async (req,res) => {
     let URL = req.query.URL;
    
   
   
   
-    await ytdl.getInfo(URL).then(info => {
+    await ytdl.getInfo(URL).then(info => {  
       console.log(info.videoDetails.title);
   
   
@@ -64,6 +64,10 @@ app.get('/downloadmp4', async (req,res) => {
           
       }).pipe(res)
       })
+  
+  
+    })
+  
   
   
     })
