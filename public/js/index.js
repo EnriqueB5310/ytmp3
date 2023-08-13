@@ -14,11 +14,11 @@ getMp4(Link.value)
 })
 
 function getMp3(URL) {
-  window.location.href =`http://localhost:4000/download?URL=${URL}`;
+  window.location.href =`https://ytmp3-iqma.onrender.com//download?URL=${URL}`;
 
 }
 
 function getMp4(URL) {
-  window.location.href =`http://localhost:4000/downloadmp4?URL=${URL}`;
+  window.location.href =`https://ytmp3-iqma.onrender.com//downloadmp4?URL=${URL}`;
 
 }
