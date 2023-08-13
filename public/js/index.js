@@ -4,7 +4,7 @@ const Link = document.querySelector('.URL-input')
 const mp4convert = document.querySelector('.mp4')
 
 mp3convert.addEventListener('click' , () => {
-    getMP3(Link.value)
+    getMp3(Link.value)
 })
 
 mp4convert.addEventListener('click', () => {
